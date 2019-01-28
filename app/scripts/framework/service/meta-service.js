@@ -159,6 +159,15 @@ org.ekstep.services.metaService = new (org.ekstep.services.iService.extend({
      */
 	getFormConfigurations: function (data, callback) {
 		this.postFromService(this.getBaseURL() + this.getAPISlug() + this.getConfig('configEndPoint', '/data') + this.getConfig('configurationUrl', '/v1/form/read'), data, this.requestHeaders, callback)
-	}
+	},
 
+	/**
+     * Get form api
+     * @param  {data} data to pass in post api
+     * @param  {Function} callback returns error and response as arguments
+     * @memberof org.ekstep.services.metaService
+     */
+	getVideoLicense: function (data, field, callback) {
+		this.postFromService(this.getBaseURL() + this.getAPISlug() + this.getConfig('videoLicenseURL', '/asset/v3/validate?field=' + field), data, this.requestHeaders, callback)
+	}
 }))()
